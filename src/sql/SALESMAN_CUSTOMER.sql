@@ -58,4 +58,4 @@ join deal on deal.customer_id = customer.customer_id
 where deal.deal_date > to_date('2017-08-01 00:00:00', 'yyyy-mm-dd HH24:MI:SS') and
 deal.deal_date < to_date('2017-08-31 23:59:59', 'yyyy-mm-dd HH24:MI:SS')
 group by salesman.name
-order by max (deal.amount) desc;
+order by sum (deal.amount) desc;
